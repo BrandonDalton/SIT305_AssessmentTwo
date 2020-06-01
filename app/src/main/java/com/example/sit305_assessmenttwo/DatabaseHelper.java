@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -52,6 +53,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor getItems() {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + tb_name;
+        Cursor results = db.rawQuery(query, null);
+        return results;
+    }
+
+    public Cursor getItemID(String name) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT " + col_1 + " FROM " + tb_name + " WHERE " + col_2 + " = '" + name + "'";
         Cursor results = db.rawQuery(query, null);
         return results;
     }
