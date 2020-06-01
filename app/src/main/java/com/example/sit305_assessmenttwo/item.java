@@ -1,23 +1,18 @@
 package com.example.sit305_assessmenttwo;
 
 public class item {
-    int id;
     String name;
     String brand;
-    int stock;
+    String stock;
 
     // constructors
     public item() {
     }
 
-    public item(String name, String brand, int stock) {
+    public item(String name, String brand, String stock) {
         this.name = name;
         this.brand = brand;
         this.stock = stock;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setName(String name) {
@@ -28,12 +23,8 @@ public class item {
         this.brand = brand;
     }
 
-    public void setStock(int stock) {
+    public void setStock(String stock) {
         this.stock = stock;
-    }
-
-    public long getId() {
-        return this.id;
     }
 
     public String getName() {
@@ -44,7 +35,7 @@ public class item {
         return this.brand;
     }
 
-    public int getStock() {
+    public String getStock() {
         return this.stock;
     }
 }
