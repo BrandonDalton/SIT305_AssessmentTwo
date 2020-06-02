@@ -55,6 +55,8 @@ public class ViewListItem extends AppCompatActivity {
                 item name = (com.example.sit305_assessmenttwo.item) parent.getItemAtPosition(position);
                 //Get The Name of The Item
                 String itemName = name.getName();
+                String brandName = name.getBrand();
+                String stock = name.getStock();
 
                 //Get ID Of Item
                 Cursor result = db.getItemID(itemName);
@@ -66,11 +68,13 @@ public class ViewListItem extends AppCompatActivity {
                     errorID = result.getInt(0);
                     Log.d("tests" , "ID IS" + errorID);
 
-                } if(errorID > 1) {
-                    Log.d("test" , "ID IS" + errorID);
+                } if(errorID > -1) {
                     Intent editScreen = new Intent(ViewListItem.this, editItem.class);
                     editScreen.putExtra("id", errorID);
                     editScreen.putExtra("itemName", itemName);
+                    editScreen.putExtra("brandName", brandName);
+                    editScreen.putExtra("stock", stock);
+                    startActivity(editScreen);
 
                 } else {
                     toastMessage("No Item Is Listed");

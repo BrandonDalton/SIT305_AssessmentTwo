@@ -20,7 +20,7 @@ public class inventory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory);
 
-        buttonAdd = findViewById(R.id.addButton);
+        buttonAdd = findViewById(R.id.addItem);
         buttonView = findViewById(R.id.viewItems);
         inputName = findViewById(R.id.nameInput);
         inputBrand = findViewById(R.id.brandInput);
