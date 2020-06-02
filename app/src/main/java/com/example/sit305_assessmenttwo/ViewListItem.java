@@ -2,6 +2,7 @@ package com.example.sit305_assessmenttwo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.nfc.Tag;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -66,11 +68,19 @@ public class ViewListItem extends AppCompatActivity {
 
                 } if(errorID > 1) {
                     Log.d("test" , "ID IS" + errorID);
+                    Intent editScreen = new Intent(ViewListItem.this, editItem.class);
+                    editScreen.putExtra("id", errorID);
+                    editScreen.putExtra("itemName", itemName);
+
                 } else {
-                    //No ID
+                    toastMessage("No Item Is Listed");
                 }
 
             }
         });
+    }
+
+    private void toastMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
