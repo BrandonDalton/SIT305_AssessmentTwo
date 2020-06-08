@@ -56,9 +56,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(query);
     }
 
-    public void deleteItem(int id, String name, String brand, String stock) {
+    public void deleteItem(int id, String name) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "DELETE FROM " + tb_name + " SET " + col_2 + " = '" +  newName + "', " + col_3 + " = '" +  newBrand + "', " +  col_4 + " = '" +  newStock + "' WHERE " + col_1 + " = '" + id + "'";
+        String query = "DELETE FROM " + tb_name + " WHERE " + col_1 + " = '" + id + "'" + " AND " + col_2 + " = '" + name + "'";
         db.execSQL(query);
     }
 

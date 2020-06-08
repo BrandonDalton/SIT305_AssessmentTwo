@@ -62,7 +62,6 @@ public class ViewListItem extends AppCompatActivity {
                 Cursor result = db.getItemID(itemName);
                 
                 //Give Something incase of null value to not break App
-
                 int errorID = -1;
                 while(result.moveToNext()) {
                     errorID = result.getInt(0);

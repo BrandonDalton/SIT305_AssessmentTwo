@@ -50,10 +50,15 @@ public class editItem extends AppCompatActivity {
                 String itemName = inputName.getText().toString();
                 String brandName = inputBrand.getText().toString();
                 String stock = inputStock.getText().toString();
-                Log.d("test",  itemName + " " + itemID + " " + itemNameOld);
 
                 dbHelper.updateItem(itemID, itemName, brandName, stock);
+            }
+        });
 
+        buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dbHelper.deleteItem(itemID, itemNameOld);
             }
         });
 
