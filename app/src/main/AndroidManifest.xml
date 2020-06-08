@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".editItem"></activity>
+        <activity android:name=".imagecapture"></activity>
+        <activity android:name=".editItem" />
         <activity android:name=".ViewListItem" />
         <activity android:name=".inventory" />
         <activity android:name=".MainActivity">
