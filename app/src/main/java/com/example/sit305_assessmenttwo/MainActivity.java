@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Activity Intent Creation
         final Intent inventoryActivity =  new Intent(this, inventory.class);
-        final Intent imagecaptureyActivity =  new Intent(this, imagecapture.class);
+        final Intent imagecaptureActivity =  new Intent(this, imagecapture.class);
 
 
         //List Creation
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 //If Click Is Second Item
                 if (position == 1) {
-                    startActivity(imagecaptureyActivity);
+                    startActivity(imagecaptureActivity);
                 }
                 //If Click Is Third Item
                 if (position == 2) {
