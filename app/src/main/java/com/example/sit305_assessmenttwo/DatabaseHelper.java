@@ -75,7 +75,4 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor results = db.rawQuery(query, null);
         return results;
     }
-
-
-
 }

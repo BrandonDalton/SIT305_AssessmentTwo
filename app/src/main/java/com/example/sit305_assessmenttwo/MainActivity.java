@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     //Variable Declarations
 
     //Menu Options Array
-    String menuOptions[] = {"Inventory Management", "Option Two", "Option Three", "Option Four"};
+    String menuOptions[] = {"Inventory Management", "Image Taker", "Information Centre", "Option Four"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

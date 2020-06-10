@@ -34,7 +34,6 @@ public class inventory extends AppCompatActivity {
                 String brandInput = inputBrand.getText().toString();
                 String stockInput = inputStock.getText().toString();
                 AddItem(nameInput, brandInput, stockInput);
-                //Error Handling
             }
         });
 

@@ -27,7 +27,7 @@ public class imagecapture extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 111;
     private Button buttonCapture, buttonSave;
-    private ImageView imagePreview;
+
     Uri imageToUploadUri;
     File f;
 
@@ -41,7 +41,6 @@ public class imagecapture extends AppCompatActivity {
 
         buttonCapture = findViewById(R.id.captureImageButton);
         buttonSave = findViewById(R.id.saveImage);
-        imagePreview = findViewById(R.id.previewImage);
 
         buttonCapture.setOnClickListener(new View.OnClickListener() {
             @Override
