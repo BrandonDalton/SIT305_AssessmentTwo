@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         //Activity Intent Creation
         final Intent inventoryActivity =  new Intent(this, inventory.class);
         final Intent imagecaptureActivity =  new Intent(this, imagecapture.class);
+        final Intent youtubeActivity = new Intent(this, youtubeactivity.class);
 
 
         //List Creation
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 //If Click Is Third Item
                 if (position == 2) {
-
+                    startActivity(youtubeActivity);
                 }
                 //If Click Is Fourth Item
                 if (position == 3) {
