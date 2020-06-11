@@ -52,6 +52,8 @@ public class editItem extends AppCompatActivity {
                 String stock = inputStock.getText().toString();
 
                 dbHelper.updateItem(itemID, itemName, brandName, stock);
+                Intent intent = new Intent(editItem.this, inventory.class);
+                startActivity(intent);
             }
         });
 
@@ -59,6 +61,8 @@ public class editItem extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dbHelper.deleteItem(itemID, itemNameOld);
+                Intent intent = new Intent(editItem.this, inventory.class);
+                startActivity(intent);
             }
         });
 
