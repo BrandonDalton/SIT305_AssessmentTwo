@@ -13,8 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".youtubeactivity"></activity>
-        <activity android:name=".imagecapture" />
+        <activity android:name=".youtubeActivity"></activity>
+        <activity android:name=".imageCapture" />
         <activity android:name=".editItem" />
         <activity android:name=".ViewListItem" />
         <activity android:name=".inventory" />

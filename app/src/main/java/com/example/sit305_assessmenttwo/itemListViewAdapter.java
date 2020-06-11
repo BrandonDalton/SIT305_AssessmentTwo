@@ -9,13 +9,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class item_listAdapter extends ArrayAdapter<item> {
-
+public class itemListViewAdapter extends ArrayAdapter<item> {
+    //Custom Layout Variable
     private LayoutInflater customLayout;
     private ArrayList<item> items;
     private int viewID;
 
-    public item_listAdapter(Context context, int id, ArrayList<item> items) {
+    public itemListViewAdapter(Context context, int id, ArrayList<item> items) {
         super(context, id, items);
         this.items = items;
         customLayout = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -23,15 +23,17 @@ public class item_listAdapter extends ArrayAdapter<item> {
     }
 
     public View getView(int position, View convertView, ViewGroup parents) {
+        //Gets View And Inflates Our Custom View To It
         convertView = customLayout.inflate(viewID, null);
-
+        //Get The Position of the Item
         item item = items.get(position);
-
+        //If There Is An Item
         if (item != null) {
+            //Place Values Into UI
             TextView itemName = convertView.findViewById(R.id.textItemName);
             TextView brandName = convertView.findViewById(R.id.textBrand);
             TextView stockName = convertView.findViewById(R.id.textStock);
-
+            //Gets The Values and Sets The Text
             if (itemName != null) {
                 itemName.setText((item.getName()));
             }
@@ -42,6 +44,7 @@ public class item_listAdapter extends ArrayAdapter<item> {
                 stockName.setText((item.getStock()));
             }
         }
+        //Returns The Custom View
         return convertView;
     }
 }
