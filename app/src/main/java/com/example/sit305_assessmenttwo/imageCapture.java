@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,6 +54,7 @@ public class imageCapture extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 saveToGallery();
+                toastMessage("Image Saved To Gallery");
             }
         });
     }
@@ -71,5 +73,9 @@ public class imageCapture extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         intent.setData(Uri.fromFile(f));
         sendBroadcast(intent);
+    }
+
+    private void toastMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
