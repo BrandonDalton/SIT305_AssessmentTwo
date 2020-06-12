@@ -1,0 +1,12 @@
+May 10th - Project Set Up
+May 10th - 24th : Project Research And Ideas
+May 24th: Menu Implementation and Database Implementation 
+May 25th - June 1st: Researching and Encountering Database Issues 
+June 1st: Database Overhaul and Reimplementation & Adding In Editable Fields
+June 2nd: Edit Item Ability
+June 3: Edit Item Ability
+June 8th : Image Capture And Delete Item
+June 9th : Image Capture
+June 10th: Adding Youtube Player and Global Styles
+June 11th : Improved User Flow
+Junge 12th : Commenting and Cleaning Up Code
