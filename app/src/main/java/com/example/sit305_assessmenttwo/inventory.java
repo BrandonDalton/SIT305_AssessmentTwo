@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class inventory extends AppCompatActivity {
-
+    //Variables
     DatabaseHelper dbHelper;
     private Button buttonAdd, buttonView;
     private EditText inputName, inputBrand, inputStock;
@@ -19,7 +19,7 @@ public class inventory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory);
-
+        //Set Up User Interface Values
         buttonAdd = findViewById(R.id.addItem);
         buttonView = findViewById(R.id.viewItems);
         inputName = findViewById(R.id.nameInput);
@@ -30,6 +30,7 @@ public class inventory extends AppCompatActivity {
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Get Values In Inputs and Run Add Item Function
                 String nameInput = inputName.getText().toString();
                 String brandInput = inputBrand.getText().toString();
                 String stockInput = inputStock.getText().toString();
@@ -40,6 +41,7 @@ public class inventory extends AppCompatActivity {
         buttonView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Runs View Intent
                 Intent intent = new Intent(inventory.this, ViewListItem.class);
                 startActivity(intent);
             }
@@ -48,11 +50,13 @@ public class inventory extends AppCompatActivity {
     }
 
     public void AddItem(String name, String brand, String stock) {
+        //Runs Add Item Function
         boolean addResult = dbHelper.addItem(name, brand, stock);
+        //Resets Text To Empty
         inputName.setText("");
         inputBrand.setText("");
         inputStock.setText("");
-
+        //Displays Message Feedback
         if(addResult) {
             toastMessage("Item Inserted");
         } else {

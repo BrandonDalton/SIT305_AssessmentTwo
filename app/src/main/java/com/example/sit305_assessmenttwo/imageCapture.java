@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class imagecapture extends AppCompatActivity {
+public class imageCapture extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 111;
     private Button buttonCapture, buttonSave;
@@ -41,14 +41,14 @@ public class imagecapture extends AppCompatActivity {
 
         buttonCapture = findViewById(R.id.captureImageButton);
         buttonSave = findViewById(R.id.saveImage);
-
+        //Button Capture Runs Take Picture Function
         buttonCapture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                     takePicture();
             }
         });
-
+        //Button Save Runs Save To Gallery Function
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +56,7 @@ public class imagecapture extends AppCompatActivity {
             }
         });
     }
-
+    //Runs Camera Intent and Saves It To Internal Storage
     private void takePicture() {
             Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             if (takePicture.resolveActivity(getPackageManager()) != null) {
@@ -66,7 +66,7 @@ public class imagecapture extends AppCompatActivity {
                 startActivityForResult(takePicture, REQUEST_IMAGE_CAPTURE);
             }
     }
-
+    //Saves File To Gallery
     private void saveToGallery() {
         Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         intent.setData(Uri.fromFile(f));

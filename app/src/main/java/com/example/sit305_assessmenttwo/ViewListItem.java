@@ -4,13 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -18,7 +15,7 @@ import java.util.ArrayList;
 
 
 public class ViewListItem extends AppCompatActivity {
-
+    //Variable Declaration
     DatabaseHelper db;
     item item;
     ArrayList<item> itemlists;
@@ -28,24 +25,28 @@ public class ViewListItem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_list_item);
+        //Variable & Object Declaration
         resultsListView = findViewById(R.id.listView);
         db = new DatabaseHelper(this);
         itemlists = new ArrayList<>();
-        
+        //Run Populate List
         populateList();
 
     }
 
     private void populateList() {
+        //Run Get Items Which Retrieves All Items Within In List
         Cursor results = db.getItems();
 
-
+        //While There Is A Result
         while(results.moveToNext()) {
+            //Get The Strings In Each Column
            item = new item(results.getString(1), results.getString(2), results.getString(3));
+           //Add It To List
            itemlists.add(item);
         }
-
-        item_listAdapter adapter = new item_listAdapter(this, R.layout.list_adapter_adapter , itemlists);
+        //Display List
+        itemListViewAdapter adapter = new itemListViewAdapter(this, R.layout.list_adapter_adapter , itemlists);
         resultsListView.setAdapter(adapter);
 
         resultsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -65,10 +66,10 @@ public class ViewListItem extends AppCompatActivity {
                 int errorID = -1;
                 while(result.moveToNext()) {
                     errorID = result.getInt(0);
-                    Log.d("tests" , "ID IS" + errorID);
 
                 } if(errorID > -1) {
                     Intent editScreen = new Intent(ViewListItem.this, editItem.class);
+                    //If Item Is Clicked Go To Edit Screen Activity and Pass Through Values
                     editScreen.putExtra("id", errorID);
                     editScreen.putExtra("itemName", itemName);
                     editScreen.putExtra("brandName", brandName);

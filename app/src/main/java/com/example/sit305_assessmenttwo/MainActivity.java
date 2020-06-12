@@ -3,9 +3,7 @@ package com.example.sit305_assessmenttwo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     //Variable Declarations
 
     //Menu Options Array
-    String menuOptions[] = {"Inventory Management", "Image Taker", "Information Centre", "Option Four"};
+    String menuOptions[] = {"Inventory Management", "Image Taker", "Information Centre"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Activity Intent Creation
         final Intent inventoryActivity =  new Intent(this, inventory.class);
-        final Intent imagecaptureActivity =  new Intent(this, imagecapture.class);
-        final Intent youtubeActivity = new Intent(this, youtubeactivity.class);
+        final Intent imagecaptureActivity =  new Intent(this, imageCapture.class);
+        final Intent youtubeActivity = new Intent(this, com.example.sit305_assessmenttwo.youtubeActivity.class);
 
 
         //List Creation
@@ -51,10 +49,6 @@ public class MainActivity extends AppCompatActivity {
                 //If Click Is Third Item
                 if (position == 2) {
                     startActivity(youtubeActivity);
-                }
-                //If Click Is Fourth Item
-                if (position == 3) {
-
                 }
             }
         });
