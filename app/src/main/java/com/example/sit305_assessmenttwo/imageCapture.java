@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,10 +28,11 @@ import java.util.Date;
 public class imageCapture extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 111;
-    private Button buttonCapture, buttonSave;
+    private Button buttonCapture, buttonSave, buttonBack;
 
     Uri imageToUploadUri;
     File f;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +41,17 @@ public class imageCapture extends AppCompatActivity {
 
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
-
+        buttonBack = findViewById(R.id.backButton);
         buttonCapture = findViewById(R.id.captureImageButton);
         buttonSave = findViewById(R.id.saveImage);
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(imageCapture.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
         //Button Capture Runs Take Picture Function
         buttonCapture.setOnClickListener(new View.OnClickListener() {
             @Override

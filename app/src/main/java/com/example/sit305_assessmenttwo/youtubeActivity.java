@@ -2,6 +2,7 @@ package com.example.sit305_assessmenttwo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +15,7 @@ import com.google.android.youtube.player.YouTubePlayerView;
 public class youtubeActivity extends YouTubeBaseActivity {
     //Variable Init
     YouTubePlayerView youTubePlayerView;
-    Button playButton;
+    Button playButton, buttonBack;
     YouTubePlayer.OnInitializedListener onInitializedListener;
 
     @Override
@@ -23,13 +24,22 @@ public class youtubeActivity extends YouTubeBaseActivity {
         setContentView(R.layout.activity_youtubeactivity);
         //User Interface Init
         playButton = findViewById(R.id.playButton);
+        buttonBack = findViewById(R.id.backButton);
         youTubePlayerView = findViewById(R.id.youtubePlayer);
+
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(youtubeActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         onInitializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override
             //When Youtube Launches Successfully Play Video
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                youTubePlayer.loadVideo("i0hf19Qm_Sc");
+                youTubePlayer.loadVideo("72BSpakRgyc");
             }
 
             @Override

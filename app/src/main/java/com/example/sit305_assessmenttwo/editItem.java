@@ -19,7 +19,7 @@ public class editItem extends AppCompatActivity {
     private String stock;
     private int itemID;
 
-    private Button buttonEdit, buttonDelete;
+    private Button buttonEdit, buttonDelete, buttonBack;
     private EditText inputName, inputBrand, inputStock;
 
     @Override
@@ -33,6 +33,7 @@ public class editItem extends AppCompatActivity {
         inputStock = findViewById(R.id.stockInput);
         buttonEdit = findViewById(R.id.editItems);
         buttonDelete = findViewById(R.id.deleteItem);
+        buttonBack = findViewById(R.id.backButton);
         //Create Database Helper For Functions
         dbHelper = new DatabaseHelper(this);
         //Get The Values from the previous Intent
@@ -47,6 +48,14 @@ public class editItem extends AppCompatActivity {
         inputName.setText(itemNameOld);
         inputBrand.setText(brandName);
         inputStock.setText(stock);
+
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(editItem.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //Edit button is clicked
         buttonEdit.setOnClickListener(new View.OnClickListener() {

@@ -13,12 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".youtubeActivity"></activity>
-        <activity android:name=".imageCapture" />
-        <activity android:name=".editItem" />
-        <activity android:name=".ViewListItem" />
-        <activity android:name=".inventory" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".youtubeActivity" android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".imageCapture" android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".editItem" android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ViewListItem" android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".inventory" android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity" android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

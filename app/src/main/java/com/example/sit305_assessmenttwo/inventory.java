@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class inventory extends AppCompatActivity {
     //Variables
     DatabaseHelper dbHelper;
-    private Button buttonAdd, buttonView;
+    private Button buttonAdd, buttonView, buttonBack;
     private EditText inputName, inputBrand, inputStock;
 
     @Override
@@ -22,11 +22,18 @@ public class inventory extends AppCompatActivity {
         //Set Up User Interface Values
         buttonAdd = findViewById(R.id.addItem);
         buttonView = findViewById(R.id.viewItems);
+        buttonBack = findViewById(R.id.backButton);
         inputName = findViewById(R.id.nameInput);
         inputBrand = findViewById(R.id.brandInput);
         inputStock = findViewById(R.id.stockInput);
         dbHelper = new DatabaseHelper(this);
-
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(inventory.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
